@@ -1,0 +1,73 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <!-- TO UPDATE -->
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+
+          <div class="form-group">
+            <div class="form-group" align-center>Agregar Alumno</div>
+            <input 
+              type="text"
+              class="form-control"
+              name="nombre"
+              #name="ngModel"
+              [(ngModel)]="productService.selectedProduct.nombre"
+              placeholder="Ingresa el Nombre"
+              >
+          </div>
+          <div class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                name="apellidos"
+                #category="ngModel"
+                [(ngModel)]="productService.selectedProduct.apellidos"
+                placeholder="Ingresa los Apellidos"
+                >
+            </div>
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="num_control"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.num_control"
+              placeholder="Ingresa el Numero de control"
+              >
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="clve_mat"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.clve_mat"
+              placeholder="Ingresa la Clave de la materia"
+              >
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="calif"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.calif"
+              placeholder="Ingresa la Calificacion"
+              >
+          </div>
+
+         
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Agregar Alumno
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                <i class="fas fa-sync-alt"></i> Limpiar
+            </button>
+          </div>
+        </form>
+  </div>
+</div>
